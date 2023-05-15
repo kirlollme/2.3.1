@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<p th:text="${'Name : ' + user.getName()}">VALUE</p>
+<p th:text="${'Surname: ' + user.getSurname()}">VALUE</p>
+<p th:text="${'Age: ' + user.getAge()}">VALUE</p>
+<p th:text="${user.getId()}">VALUE</p>
+
+<a th:href="@{/edit(id = ${user.getId()})}">Edit</a>
+<hr>
+<form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>
